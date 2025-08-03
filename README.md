@@ -35,8 +35,8 @@ Features:
 
 Commands:
 
-Encrypt a file - python3 pqs_cli.py encrypt test_eqs.txt test.pqs my_pass
-Decrypt a file - python3 pqs_cli.py decrypt test.pqs test_eqs.txt my_pass
+- Encrypt a file - python3 pqs_cli.py encrypt test_eqs.txt test.pqs my_pass
+- Decrypt a file - python3 pqs_cli.py decrypt test.pqs test_eqs.txt my_pass
 
 ---
 
