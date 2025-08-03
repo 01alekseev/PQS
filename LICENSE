@@ -1,0 +1,23 @@
+PQS Fair Use License v1.0  
+Copyright © 2025 Ivan Alekseev
+
+This software and its cryptographic logic may be freely used, modified, and integrated into other projects, including commercial applications, under the following strict conditions:
+
+You MAY:
+- Use PQS (Petoron Quantum Standard) for personal or commercial purposes
+- Include PQS in your apps, services, or cryptographic systems
+- Study, fork, and modify the codebase
+
+You MUST NOT:
+- Remove or obscure the original credit: "PQS by Ivan Alekseev"
+- Claim PQS as your own invention or core technology
+- Use PQS or its derivatives in surveillance, authoritarian, or malicious systems
+- Resell PQS as a stand-alone product under a different name
+
+If used in any commercial or visible deployment (product, app, service, research) :
+
+You MUST:
+- Preserve a visible credit in docs, UI, or about section:  
+  "Powered by PQS (Petoron Quantum Standard) by Ivan Alekseev"
+
+This license is designed to keep PQS free and open, while protecting its integrity, authorship, and intent :))
