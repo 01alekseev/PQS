@@ -29,22 +29,25 @@ Features:
 - Full symmetric encryption (XOR + dynamic key)
 - Salt-based randomness
 - Obfuscated binary format
-- Hardcoded size limit 1MB - prevents abuse or flooding
-
+- Hardcoded size limit 128 MB
 ---
 
 Commands:
 
-- Encrypt a file - python3 pqs_cli.py encrypt test_eqs.txt test.pqs my_pass
-- Decrypt a file - python3 pqs_cli.py decrypt test.pqs test_eqs.txt my_pass
+- Encrypt a file - python3 pqs_cli.py encrypt test_eqs.txt test.pqs
+- Decrypt a file - python3 pqs_cli.py decrypt test.pqs test_eqs.txt
 
 ---
 
 - Example:
-python3 pqs_cli.py encrypt test_eqs.txt test.pqs 123456789
+python3 pqs_cli.py encrypt test_eqs.txt test.pqs
+Enter password
+Done.
 
 - Example:
-python3 pqs_cli.py decrypt test.pqs test_eqs.txt 123456789
+python3 pqs_cli.py decrypt test.pqs test_eqs.txt
+Enter password
+Done.
 
 ---
 
@@ -52,7 +55,6 @@ What happens if...
 Wrong password - integrity check fails
 File modified - corrupted padding error
 Empty password - error is raised
-File too large >1MB - rejected instantly
 
 ---
 
