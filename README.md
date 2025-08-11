@@ -34,11 +34,12 @@ Every byte is placed with purpose:
 ---
 
 Features:
-Full symmetric encryption (XOR + streaming keystream)
-Salt-based randomness for every file
-Obfuscated binary format with fake padding
-Strict size limit: 128 MB per block
-Works fully offline
+
+- Full symmetric encryption (XOR + streaming keystream)
+- Salt-based randomness for every file
+- Obfuscated binary format with fake padding
+- Strict size limit: 128 MB per block
+- Works fully offline
 ---
 
 Commands:
