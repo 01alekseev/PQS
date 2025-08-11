@@ -1,22 +1,30 @@
 Petoron Quantum Standard (PQS)
 
-A fully independent, self-contained encryption standard written 100% from scratch without relying on any cryptographic libraries, third-party hashes, or encodings.
+A fully independent, self-contained encryption standard — built from the ground up with zero reliance on external cryptographic libraries, third-party hashes, or encodings.
 
 ---
 
 What is PQS ?:))
 
-Petoron Quantum Standard is a custom cryptographic core built from the ground up for absolute offline protection.
-- Own hash function - pqs_hash()
-- Cube A+B logic - a one-of-a-kind key derivation method
-- Fake padding - masks file structure from attackers
-- Integrity embedded - modification = automatic failure
-- No dependencies - works on any system
+Petoron Quantum Standard is a custom cryptographic engine designed for absolute offline file protection - minimalistic, auditable, and brutally transparent.
+- PBKDF2-HMAC-SHA256 (200k iterations, adjustable) for password hardening.
+- Key separation via BLAKE2s — independent keys for encryption and MAC.
+- BLAKE2s-MAC authentication — 16-byte tag, modification = instant rejection.
+- Streaming keystream generator — no key reuse, secure for large payloads.
+- Fake padding (HEAD/TAIL) — obfuscates binary boundaries and structure.
+- Precise size encoding — restores original payload exactly.
+- Supports files up to 128 MB per encrypted block.
 
 ---
 
-Each .pqs file contains:
-VERSION(4B) + SALT(16B) + HEAD(8B) + INTEGRITY(4B) + DATA(n) + TAIL(8B)
+PQS File Structure:
+VERSION (4B)  
+SALT (16B)  
+FAKEPAD_HEAD (8B)  
+TAG (16B)  
+ORIG_SIZE (4B)  
+CIPHERTEXT (n bytes)  
+FAKEPAD_TAIL (8B)  
 
 Every byte is placed with purpose:
 - Non-traceable
@@ -26,10 +34,11 @@ Every byte is placed with purpose:
 ---
 
 Features:
-- Full symmetric encryption (XOR + dynamic key)
-- Salt-based randomness
-- Obfuscated binary format
-- Hardcoded size limit 128 MB
+Full symmetric encryption (XOR + streaming keystream)
+Salt-based randomness for every file
+Obfuscated binary format with fake padding
+Strict size limit: 128 MB per block
+Works fully offline
 ---
 
 Commands:
@@ -51,10 +60,10 @@ Done.
 
 ---
 
-What happens if...
-Wrong password - integrity check fails
-File modified - corrupted padding error
-Empty password - error is raised
+Failure Cases:
+- Wrong password: Integrity/auth check failed
+- File modified: Corrupted padding or tag mismatch
+- Empty password: Error raised
 
 ---
 
